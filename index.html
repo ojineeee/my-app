@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="오의진의 연구 및 프로젝트 포트폴리오" />
+  <title>오의진 | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: rgba(255, 255, 255, 0.82);
+      --text: #172033;
+      --muted: #657086;
+      --primary: #3568e8;
+      --line: #dfe6f0;
+      --shadow: 0 18px 50px rgba(35, 55, 90, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Pretendard, "Noto Sans KR", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 10% 5%, #dce9ff 0, transparent 28%),
+        radial-gradient(circle at 90% 25%, #e6ddff 0, transparent 25%),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, calc(100% - 40px)); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(244, 247, 251, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(223, 230, 240, 0.7);
+    }
+    nav { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-weight: 900; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--primary); }
+
+    .hero { min-height: 78vh; display: grid; place-items: center; padding: 90px 0 70px; }
+    .hero-inner { display: grid; grid-template-columns: 1.35fr 0.65fr; align-items: center; gap: 60px; }
+    .eyebrow { color: var(--primary); font-weight: 800; letter-spacing: 0.08em; font-size: 13px; }
+    h1 { margin: 14px 0 22px; font-size: clamp(43px, 7vw, 76px); line-height: 1.08; letter-spacing: -0.055em; }
+    h1 span { color: var(--primary); }
+    .intro { max-width: 670px; color: var(--muted); font-size: 18px; }
+    .actions { display: flex; gap: 12px; margin-top: 32px; }
+    .button { padding: 12px 19px; border-radius: 12px; border: 1px solid var(--line); font-weight: 800; transition: 0.2s; }
+    .button.primary { color: white; background: var(--primary); border-color: var(--primary); }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(53, 104, 232, 0.18); }
+
+    .profile {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 38% 62% 60% 40% / 42% 40% 60% 58%;
+      color: white;
+      background: linear-gradient(145deg, #3568e8, #805ee5);
+      box-shadow: var(--shadow);
+      animation: float 5s ease-in-out infinite;
+    }
+    .profile strong { font-size: clamp(52px, 8vw, 92px); letter-spacing: -0.08em; }
+    @keyframes float { 50% { transform: translateY(-10px) rotate(2deg); } }
+
+    section { padding: 75px 0; }
+    .section-title { margin: 0 0 30px; font-size: 30px; letter-spacing: -0.04em; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      padding: 27px;
+      border: 1px solid rgba(223, 230, 240, 0.9);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: 0 8px 30px rgba(35, 55, 90, 0.06);
+      transition: 0.25s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card .number { color: var(--primary); font-size: 13px; font-weight: 900; }
+    .card h3 { margin: 12px 0 8px; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .tag { display: inline-block; margin: 15px 5px 0 0; padding: 5px 10px; border-radius: 999px; color: var(--primary); background: #e9f0ff; font-size: 12px; font-weight: 800; }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 42px;
+      border-radius: 28px;
+      color: white;
+      background: #172033;
+    }
+    .contact h2 { margin: 0 0 6px; font-size: 28px; }
+    .contact p { margin: 0; color: #adb8cb; }
+    footer { padding: 38px 0; text-align: center; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding-top: 65px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 45px; }
+      .profile { width: min(300px, 78vw); justify-self: center; }
+      .grid { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#top">OUI JIN OH.</a>
+      <div class="nav-links">
+        <a href="#about">소개</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">MATERIALS · INTERFACE · PROCESS</div>
+          <h1>안녕하세요,<br><span>오의진</span>입니다.</h1>
+          <p class="intro">소재와 계면을 이해하고, 실험과 데이터로 공정의 문제를 해결합니다. 연구에서 얻은 아이디어를 재현 가능한 결과로 만드는 엔지니어를 지향합니다.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">프로젝트 보기</a>
+            <a class="button" href="#contact">연락하기</a>
+          </div>
+        </div>
+        <div class="profile" aria-label="오의진 이니셜"><strong>OJ</strong></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">제가 잘하는 일</h2>
+        <div class="grid">
+          <article class="card"><span class="number">01</span><h3>공정 최적화</h3><p>변수를 체계적으로 줄여가며 공정 조건과 재현성을 확보합니다.</p></article>
+          <article class="card"><span class="number">02</span><h3>계면 엔지니어링</h3><p>표면 처리와 재료 조합을 통해 계면 결함과 성능 저하를 개선합니다.</p></article>
+          <article class="card"><span class="number">03</span><h3>데이터 분석</h3><p>측정 데이터를 시각화하고 상관관계를 분석해 개선 방향을 찾습니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="grid">
+          <article class="card"><span class="number">RESEARCH</span><h3>2D/3D 계면 제어</h3><p>2D 박막 전사 공정을 개발해 페로브스카이트 계면 결함과 소자 안정성을 개선했습니다.</p><span class="tag">Perovskite</span><span class="tag">Interface</span></article>
+          <article class="card"><span class="number">PROCESS</span><h3>공정 재현성 향상</h3><p>재료 물성과 공정 조건의 관계를 분석해 박막 전사 성공률을 향상했습니다.</p><span class="tag">Optimization</span><span class="tag">Analysis</span></article>
+          <article class="card"><span class="number">DATA</span><h3>공정 데이터 분석</h3><p>Python과 Spotfire로 데이터를 전처리하고 변수 간 상관관계를 시각화했습니다.</p><span class="tag">Python</span><span class="tag">Spotfire</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div><h2>함께 이야기해 볼까요?</h2><p>연구, 소재, 공정과 관련된 새로운 기회를 기다립니다.</p></div>
+          <!-- 아래 이메일을 본인 이메일로 변경하세요. -->
+          <a class="button primary" href="mailto:your-email@example.com">Email Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Oui Jin Oh. All rights reserved.</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
